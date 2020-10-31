@@ -1,0 +1,263 @@
+body, html {
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+.p-fluid {
+    padding: 0 4rem;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 6rem 1fr;
+    grid-template-areas: 'header''content';
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    width: 2.5rem;
+    height: 100%;
+}
+
+header {
+    grid-area: header;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    background-color: #e6e6e6;
+}
+
+.d-flex-col {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    grid-area: content;
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+}
+
+.introduction {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-image: linear-gradient(to top, #1e3c72 0%, #1e3c72 1%, #2a5298 100%);
+}
+
+img {
+    position: absolute;
+    right: 4rem;
+    width: 11.5rem;
+}
+
+.highlights {
+    display: flex;
+    align-items: center;
+}
+
+.highlight {
+    margin-right: 1.5rem;
+}
+
+.highlight svg {
+    margin-right: .5rem;
+    color: #0e5620;
+}
+
+.highlight h3, .highlight h5 {
+    margin: .25rem 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-transform: capitalize;
+}
+
+.highlight h5 {
+    margin-left: 1.75rem;
+    color: #4a4a4a;
+}
+
+.highlight h3 span {
+    font-size: 17px;
+    color: #17449e;
+}
+
+.notes {
+    color: #ccdfff;
+    z-index: 1;
+}
+
+.notes h1 strong {
+    font-size: 3rem;
+}
+
+.notes h1 em {
+    font-size: 60%;
+}
+
+.list-group {
+    padding: 0;
+}
+
+.list-group li {
+    list-style: none;
+    margin-bottom: .25rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: .85rem;
+    color: #93b8ff;
+    line-height: 1.75;
+}
+
+.list svg {
+    margin-right: .5rem;
+}
+
+.information {
+    background-color: #17449e;
+    background: linear-gradient(to right, rgba(23, 68, 158, 1), rgba(46, 103, 189, 1));
+    width: 45rem;
+    margin-top: -2rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2rem;
+    border-radius: .5rem;
+    color: #fff;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    grid-template-areas: 'hospital timings';
+    gap: 1rem;
+}
+
+.information .hospital {
+    grid-area: hospital;
+}
+
+.information .timings {
+    grid-area: timings;
+}
+
+.information h3 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.information h3 svg {
+    margin-right: .5rem;
+}
+
+.hospital p {
+    color: #bfd7ff;
+    font-size: .85rem;
+    line-height: 1.75;
+    text-align: justify;
+    margin-left: 1.8rem;
+}
+
+.timings div {
+    color: #bfd7ff;
+    font-size: .85rem;
+    margin-left: 1.8rem;
+}
+
+.timings hr {
+    margin: 1rem 0;
+}
+
+dt {
+    display: flex;
+    align-items: center;
+}
+
+dt:last-of-type {
+    margin-top: 2rem;
+}
+
+dt svg {
+    margin-right: .5rem;
+}
+
+dd {
+    margin: .5rem 1.25rem;
+    color: #ffffff;
+}
+
+.address {
+    background-color: transparent;
+    text-decoration: none;
+    color: inherit;
+}
+
+.services {
+    padding-top: 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+    gap: 1rem;
+}
+
+.service h4 {
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0px;
+    color: #171717;
+}
+
+.service p {
+    color: #757575;
+    font-weight: 400;
+}
+
+@media screen and (max-width: 830px) {
+    .information {
+        margin-top: 0;
+        border-radius: 0;
+        width: 100%;
+        padding: 1rem;
+    }
+    .p-fluid {
+        padding: 0 1rem;
+    }
+}
+
+@media (max-width: 800px) {
+    .container {
+        grid-template-rows: 1fr;
+        grid-template-areas: 'content';
+    }
+        
+    header {
+        display: none;
+    }
+    .information {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 765px) {
+    img {
+        filter: opacity(40%);
+    }
+}
+
+@media (max-width: 600px) {
+    .information {
+        grid-template-columns: 1fr;
+        grid-template-areas: 'timings' 'hospital';
+        gap: 0;
+    }
+}
